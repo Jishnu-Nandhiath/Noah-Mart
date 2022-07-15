@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block title %} signup page {% endblock %} {% block
+body %}
+
+<div class="container text-center">
+    <img
+    class="mb-4"
+    src="https://st2.depositphotos.com/3837271/8402/i/450/depositphotos_84020488-stock-photo-hand-with-marker-writing-text.jpg"
+    alt=""
+  />
+</div>
+
+<div class="container">
+  
+  <h1 class="h3 mb-3 font-weight-normal">Please Sign up to Continue !!</h1>
+
+  <form method="POST" class="form-register" style="color: white">
+
+    {{ form.hidden_tag() }}
+   
+    {{ form.username.label() }} 
+    {{ form.username(class = "form-control", placeholder = "username")}} 
+    
+    {{ form.email_address.label() }} 
+    {{form.email_address(class = "form-control", placeholder = "Enter Email Address")}}
+    
+    {{ form.password1.label() }} 
+    {{ form.password1(class = "form-control", placeholder = "Enter the Password")}} 
+    
+    {{ form.password2.label() }} 
+    {{ form.password2(class = "form-control",placeholder = "Please confirm the Password")}}
+  
+    <br>
+
+    {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+    <br>
+
+    <div class="checkbox mb-3 text-center">
+        <h6>Already have an Account ?</h6>
+        <a class="btn btn-sm btn-secondary" href="{{ url_for('signup_page') }}">Login</a>
+    </div>
+
+</form>
+</div>
+
+{% endblock %}
